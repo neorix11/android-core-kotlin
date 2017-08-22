@@ -1,6 +1,8 @@
 package com.bluelampcreative.android_core_kotlin.features
 
 import android.app.Fragment
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import com.bluelampcreative.android_core_kotlin.R
@@ -13,6 +15,10 @@ import javax.inject.Inject
 class MainActivity : BaseActivity(), MainContract.View {
 
     @Inject lateinit var presenter: MainPresenter
+
+    companion object {
+        fun create(context: Context): Intent = Intent(context, MainActivity::class.java)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
