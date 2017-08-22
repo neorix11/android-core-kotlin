@@ -7,13 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import com.bluelampcreative.android_core_kotlin.R
 import com.bluelampcreative.android_core_kotlin.core.BaseFragment
+import com.bluelampcreative.android_core_kotlin.data.DataService
 import kotlinx.android.synthetic.main.fragment_setup.*
 import javax.inject.Inject
 
 
 class SetupFragment : BaseFragment(), SetupContract.View {
 
-    @Inject lateinit var presenter: SetupPresenter
+    @Inject lateinit var presenter: SetupContract.Presetner
+    @Inject lateinit var dataService: DataService
 
     companion object {
         fun create(): Fragment = SetupFragment()
@@ -32,6 +34,6 @@ class SetupFragment : BaseFragment(), SetupContract.View {
     }
 
     override fun setFragmentText(text: String) {
-        txt_fragment_text.text = text
+        txt_fragment_text.text = dataService.getTextChangedData()
     }
 }
