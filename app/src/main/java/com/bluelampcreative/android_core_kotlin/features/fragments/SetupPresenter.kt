@@ -14,6 +14,6 @@ class SetupPresenter : SetupContract.Presetner {
     }
 
     override fun getTextForTextChange() {
-        view.setFragmentText("this is the new text")
+        view.setFragmentText("this is the new textx ")
     }
 }
