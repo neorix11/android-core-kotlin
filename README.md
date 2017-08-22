@@ -1,6 +1,6 @@
 # android-core-kotlin
 
-Base Android Project for MVP using Kotlin
+Base Android Project: MVP with Kotlin
 
 To use this for a new project, close all open Android Studio projects. Using the terminal, rename the directory to the desired name.
 ```mv AndroidBase <your new project name>```
