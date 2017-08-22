@@ -3,9 +3,7 @@ package com.bluelampcreative.android_core_kotlin.features
 import javax.inject.Inject
 
 
-class MainPresenter : MainContract.Presenter {
-
-    @Inject constructor()
+class MainPresenter @Inject constructor() : MainContract.Presenter {
 
     private lateinit var view: MainContract.View
 

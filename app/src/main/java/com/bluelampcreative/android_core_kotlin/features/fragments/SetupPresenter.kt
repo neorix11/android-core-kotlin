@@ -3,9 +3,7 @@ package com.bluelampcreative.android_core_kotlin.features.fragments
 import javax.inject.Inject
 
 
-class SetupPresenter : SetupContract.Presetner {
-
-    @Inject constructor()
+class SetupPresenter @Inject constructor() : SetupContract.Presetner {
 
     private lateinit var view: SetupContract.View
 
@@ -16,4 +14,6 @@ class SetupPresenter : SetupContract.Presetner {
     override fun getTextForTextChange() {
         view.setFragmentText("this is the new textx ")
     }
+
+
 }
