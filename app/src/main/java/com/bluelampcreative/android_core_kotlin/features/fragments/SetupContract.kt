@@ -9,6 +9,7 @@ interface SetupContract {
 
     interface Presetner {
         fun registerView(view: View)
+        fun deregisterView()
         fun getTextForTextChange()
     }
 }

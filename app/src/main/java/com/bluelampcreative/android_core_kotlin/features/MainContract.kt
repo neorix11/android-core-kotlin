@@ -10,5 +10,6 @@ interface MainContract {
 
     interface Presenter {
         fun registerView(view: View)
+        fun deregisterView()
     }
 }

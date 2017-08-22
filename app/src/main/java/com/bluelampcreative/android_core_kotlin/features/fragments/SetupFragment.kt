@@ -36,4 +36,9 @@ class SetupFragment : BaseFragment(), SetupContract.View {
     override fun setFragmentText(text: String) {
         txt_fragment_text.text = dataService.getTextChangedData()
     }
+
+    override fun onDetach() {
+        presenter.deregisterView()
+        super.onDetach()
+    }
 }

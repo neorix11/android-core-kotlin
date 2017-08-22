@@ -5,9 +5,13 @@ import javax.inject.Inject
 
 class MainPresenter @Inject constructor() : MainContract.Presenter {
 
-    private lateinit var view: MainContract.View
+    private var view: MainContract.View? = null
 
     override fun registerView(view: MainContract.View) {
         this.view = view
+    }
+
+    override fun deregisterView() {
+        view = null
     }
 }

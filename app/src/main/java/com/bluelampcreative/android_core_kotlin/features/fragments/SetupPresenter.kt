@@ -5,15 +5,17 @@ import javax.inject.Inject
 
 class SetupPresenter @Inject constructor() : SetupContract.Presetner {
 
-    private lateinit var view: SetupContract.View
+    private var view: SetupContract.View? = null
 
     override fun registerView(view: SetupContract.View) {
         this.view = view
     }
 
     override fun getTextForTextChange() {
-        view.setFragmentText("this is the new textx ")
+        view?.setFragmentText("this is the new text")
     }
 
-
+    override fun deregisterView() {
+        view = null
+    }
 }
