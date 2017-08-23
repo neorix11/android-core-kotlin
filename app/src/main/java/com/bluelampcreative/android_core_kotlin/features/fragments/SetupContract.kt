@@ -1,5 +1,7 @@
 package com.bluelampcreative.android_core_kotlin.features.fragments
 
+import com.bluelampcreative.android_core_kotlin.core.BasePresenterContract
+
 
 interface SetupContract {
 
@@ -7,9 +9,7 @@ interface SetupContract {
         fun setFragmentText(text: String)
     }
 
-    interface Presetner {
-        fun registerView(view: View)
-        fun deregisterView()
+    interface Presenter : BasePresenterContract<View> {
         fun getTextForTextChange()
     }
 }

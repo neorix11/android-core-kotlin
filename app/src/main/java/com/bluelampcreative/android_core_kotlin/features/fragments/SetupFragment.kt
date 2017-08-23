@@ -14,7 +14,7 @@ import javax.inject.Inject
 
 class SetupFragment : BaseFragment(), SetupContract.View {
 
-    @Inject lateinit var presenter: SetupContract.Presetner
+    @Inject lateinit var presenter: SetupContract.Presenter
     @Inject lateinit var dataService: DataService
 
     companion object {

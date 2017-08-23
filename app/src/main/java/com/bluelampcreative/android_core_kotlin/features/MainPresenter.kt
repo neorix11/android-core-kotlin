@@ -1,17 +1,8 @@
 package com.bluelampcreative.android_core_kotlin.features
 
-import javax.inject.Inject
+import com.bluelampcreative.android_core_kotlin.core.BasePresenter
 
 
-class MainPresenter @Inject constructor() : MainContract.Presenter {
+class MainPresenter : BasePresenter<MainContract.View>(), MainContract.Presenter {
 
-    private var view: MainContract.View? = null
-
-    override fun registerView(view: MainContract.View) {
-        this.view = view
-    }
-
-    override fun deregisterView() {
-        view = null
-    }
 }

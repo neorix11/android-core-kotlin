@@ -14,7 +14,7 @@ import javax.inject.Inject
 
 class MainActivity : BaseActivity(), MainContract.View {
 
-    @Inject lateinit var presenter: MainPresenter
+    @Inject lateinit var presenter: MainContract.Presenter
 
     companion object {
         fun create(context: Context): Intent = Intent(context, MainActivity::class.java)
@@ -42,7 +42,7 @@ class MainActivity : BaseActivity(), MainContract.View {
     }
 
     override fun setButtonText(btnText: String) {
-        btn_show_fragment.setText(btnText)
+        btn_show_fragment.text = btnText
     }
 
     private fun setFragmentContent(fragment: Fragment) {
@@ -50,6 +50,10 @@ class MainActivity : BaseActivity(), MainContract.View {
                 .beginTransaction()
                 .replace(R.id.frame_fragment_content, fragment)
                 .commit()
+    }
 
+    override fun onDestroy() {
+        presenter.deregisterView()
+        super.onDestroy()
     }
 }

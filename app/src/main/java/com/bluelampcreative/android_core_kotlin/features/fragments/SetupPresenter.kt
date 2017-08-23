@@ -1,21 +1,11 @@
 package com.bluelampcreative.android_core_kotlin.features.fragments
 
-import javax.inject.Inject
+import com.bluelampcreative.android_core_kotlin.core.BasePresenter
 
 
-class SetupPresenter @Inject constructor() : SetupContract.Presetner {
-
-    private var view: SetupContract.View? = null
-
-    override fun registerView(view: SetupContract.View) {
-        this.view = view
-    }
+class SetupPresenter : BasePresenter<SetupContract.View>(), SetupContract.Presenter {
 
     override fun getTextForTextChange() {
         view?.setFragmentText("this is the new text")
-    }
-
-    override fun deregisterView() {
-        view = null
     }
 }

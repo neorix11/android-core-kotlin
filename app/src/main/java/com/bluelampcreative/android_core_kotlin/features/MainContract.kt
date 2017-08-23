@@ -1,5 +1,7 @@
 package com.bluelampcreative.android_core_kotlin.features
 
+import com.bluelampcreative.android_core_kotlin.core.BasePresenterContract
+
 
 interface MainContract {
 
@@ -8,8 +10,5 @@ interface MainContract {
         fun setButtonText(btnText: String)
     }
 
-    interface Presenter {
-        fun registerView(view: View)
-        fun deregisterView()
-    }
+    interface Presenter : BasePresenterContract<View>
 }
