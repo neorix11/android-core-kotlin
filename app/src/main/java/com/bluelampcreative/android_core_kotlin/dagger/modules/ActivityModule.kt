@@ -1,5 +1,6 @@
-package com.bluelampcreative.android_core_kotlin.dagger
+package com.bluelampcreative.android_core_kotlin.dagger.modules
 
+import com.bluelampcreative.android_core_kotlin.dagger.ActivityScope
 import com.bluelampcreative.android_core_kotlin.features.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector

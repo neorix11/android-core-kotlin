@@ -1,4 +1,4 @@
-package com.bluelampcreative.android_core_kotlin.dagger
+package com.bluelampcreative.android_core_kotlin.dagger.modules
 
 import com.bluelampcreative.android_core_kotlin.features.fragments.SetupFragment
 import dagger.Module
