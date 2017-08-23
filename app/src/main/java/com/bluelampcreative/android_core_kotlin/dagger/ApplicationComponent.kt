@@ -7,5 +7,5 @@ import dagger.android.AndroidInjectionModule
 
 @Component(modules = arrayOf(AndroidInjectionModule::class, ActivityModule::class))
 interface ApplicationComponent {
-     fun inject(application: MainApplication)
+    fun inject(application: MainApplication)
 }
