@@ -15,16 +15,13 @@ import javax.inject.Inject
 class SetupFragment : BaseFragment(), SetupContract.View {
 
     @Inject lateinit var presenter: SetupContract.Presenter
-    @Inject lateinit var dataService: DataService
 
     companion object {
         fun create(): Fragment = SetupFragment()
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater?.inflate(R.layout.fragment_setup, container, false)
-
-        return view
+        return inflater?.inflate(R.layout.fragment_setup, container, false)
     }
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
@@ -34,7 +31,7 @@ class SetupFragment : BaseFragment(), SetupContract.View {
     }
 
     override fun setFragmentText(text: String) {
-        txt_fragment_text.text = dataService.getTextChangedData()
+        txt_fragment_text.text = text
     }
 
     override fun onDetach() {

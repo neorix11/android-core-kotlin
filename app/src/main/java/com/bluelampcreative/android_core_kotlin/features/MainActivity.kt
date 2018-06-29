@@ -5,6 +5,8 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import com.bluelampcreative.android_core_kotlin.R
 import com.bluelampcreative.android_core_kotlin.core.BaseActivity
 import com.bluelampcreative.android_core_kotlin.features.fragments.SetupFragment
@@ -32,11 +34,11 @@ class MainActivity : BaseActivity(), MainContract.View {
 
 
     override fun toggleFragmentContent() {
-        if (frame_fragment_content.visibility == View.VISIBLE) {
-            frame_fragment_content.visibility = View.GONE
+        if (frame_fragment_content.visibility == VISIBLE) {
+            frame_fragment_content.visibility = GONE
             setButtonText("Show Fragment")
         } else {
-            frame_fragment_content.visibility = View.VISIBLE
+            frame_fragment_content.visibility = VISIBLE
             setButtonText("Hide Fragment")
         }
     }

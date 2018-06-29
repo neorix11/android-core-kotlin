@@ -1,5 +1,6 @@
 package com.bluelampcreative.android_core_kotlin.dagger.modules
 
+import com.bluelampcreative.android_core_kotlin.data.DataService
 import com.bluelampcreative.android_core_kotlin.features.MainContract
 import com.bluelampcreative.android_core_kotlin.features.MainPresenter
 import com.bluelampcreative.android_core_kotlin.features.fragments.SetupContract
@@ -14,5 +15,5 @@ class PresenterModule {
     fun provideMainPresenter(): MainContract.Presenter = MainPresenter()
 
     @Provides
-    fun provideSetupPresenter(): SetupContract.Presenter = SetupPresenter()
+    fun provideSetupPresenter(dataService: DataService): SetupContract.Presenter = SetupPresenter(dataService)
 }
