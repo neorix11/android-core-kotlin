@@ -10,6 +10,6 @@ interface SetupContract {
     }
 
     interface Presenter : BasePresenterContract<View> {
-        fun getTextForTextChange()
+        fun getNewText()
     }
 }

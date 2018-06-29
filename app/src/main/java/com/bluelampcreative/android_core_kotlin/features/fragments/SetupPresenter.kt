@@ -7,7 +7,7 @@ import javax.inject.Inject
 
 class SetupPresenter(var dataService: DataService) : BasePresenter<SetupContract.View>(), SetupContract.Presenter {
 
-    override fun getTextForTextChange() {
+    override fun getNewText() {
         dataService.getTextChangedData()
                 .subscribe { text -> view?.setFragmentText(text) }
     }
