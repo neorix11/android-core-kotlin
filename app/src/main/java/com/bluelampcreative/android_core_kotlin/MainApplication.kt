@@ -3,6 +3,7 @@ package com.bluelampcreative.android_core_kotlin
 import android.app.Activity
 import android.app.Application
 import com.bluelampcreative.android_core_kotlin.dagger.DaggerApplicationComponent
+import com.bluelampcreative.android_core_kotlin.dagger.modules.ApplicationModule
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
@@ -12,7 +13,8 @@ import javax.inject.Inject
 
 class MainApplication : Application(), HasActivityInjector {
 
-    @Inject lateinit var activityInjector: DispatchingAndroidInjector<Activity>
+    @Inject
+    lateinit var activityInjector: DispatchingAndroidInjector<Activity>
 
     override fun activityInjector(): AndroidInjector<Activity> = activityInjector
 
@@ -24,7 +26,9 @@ class MainApplication : Application(), HasActivityInjector {
         }
 
         DaggerApplicationComponent
-                .create()
+                .builder()
+                .applicationModule(ApplicationModule(this))
+                .build()
                 .inject(this)
 
     }
