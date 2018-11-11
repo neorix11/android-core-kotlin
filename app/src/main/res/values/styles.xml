@@ -8,8 +8,9 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="AppTheme.Splash" parent="AppTheme">
+    <style name="AppTheme.Splash" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowBackground">@color/colorPrimary</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 
 </resources>
