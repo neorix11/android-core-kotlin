@@ -1,5 +1,6 @@
 package com.bluelampcreative.android_core_kotlin.dagger.modules
 
+import android.content.Context.MODE_PRIVATE
 import com.bluelampcreative.android_core_kotlin.BuildConfig
 import com.bluelampcreative.android_core_kotlin.MainApplication
 import com.bluelampcreative.android_core_kotlin.dagger.DaggerConstants.Companion.AUTH_OKHTTP
@@ -7,6 +8,8 @@ import com.bluelampcreative.android_core_kotlin.dagger.DaggerConstants.Companion
 import com.bluelampcreative.android_core_kotlin.dagger.DaggerConstants.Companion.OKHTTP
 import com.bluelampcreative.android_core_kotlin.dagger.DaggerConstants.Companion.RETROFIT
 import com.bluelampcreative.android_core_kotlin.data.local.SharedPreferenceService
+import com.bluelampcreative.android_core_kotlin.utility.NetworkUtility
+import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
 import okhttp3.Interceptor
@@ -20,7 +23,12 @@ import javax.inject.Named
 @Module
 class ApplicationModule(private val application: MainApplication) {
 
-    //@Provides a SharedPreferenceService
+    @Provides
+    fun provideSharedPreferencesService()
+            = SharedPreferenceService(application.getSharedPreferences(SharedPreferenceService.SHARED_PREFS, MODE_PRIVATE), Gson())
+
+    @Provides
+    fun provideNetworkUtility() = NetworkUtility(application.applicationContext)
 
     @Provides
     @Named(OKHTTP)
